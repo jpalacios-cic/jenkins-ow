@@ -10,12 +10,14 @@ pipeline {
             steps {
                 //sh "doxygen"
 		sh "echo 'Genera la documentación localmente con doxygen'"
+		sh "zip documentation.zip -r html/*"
             }
         }
     }
     post {
 	success {
         	publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'html/', reportFiles: 'files.html', reportName: 'Documentación', reportTitles: ''])
+		archive 'documentation.zip'
 	}
     }
 }
