@@ -9,6 +9,7 @@ pipeline {
         stage('Generar la documentación') {
             steps {
                 //sh "doxygen"
+		sh "echo 'Genera la documentación localmente con doxygen'"
             }
         }
     }
