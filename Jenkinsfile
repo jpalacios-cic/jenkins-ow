@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Generar la documentación') {
             steps {
-                sh "doxygen"
+                //sh "doxygen"
             }
         }
     }
